@@ -38,7 +38,7 @@ Port State Control (PSC) inspections are critical for maritime safety and compli
 This project developed a **dependable framework** for evaluating consensus severity in PSC inspections by leveraging **generative AI** for unbiased data synthesis and **AutoGluon** for automated machine learning. The approach has significant potential to improve objectivity and consistency in vessel surveys, supporting the maritime industry's operational and commercial objectives.
 
 ## Contributors
-- **Curtcis Yang**
+- **Curteis Yang**
 - **Dong Luanjie**
 - **Ho Min Han**
 
