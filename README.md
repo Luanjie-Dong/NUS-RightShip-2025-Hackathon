@@ -1,44 +1,42 @@
 # Maritime Hackathon 2025: Reducing Subjectivity in PSC Severity Scores with AI
 
-This repository contains the methodology and implementation details for the **Maritime Hackathon 2025** project, which focuses on reducing subjectivity in predicting severity scores of **Port State Control (PSC)** inspections using **Generative AI (GenAI)** and **AutoML**.
 
-## Abstract
+## Overview
+This repository contains the methodology and implementation details for the Maritime Hackathon 2025 project, which focuses on reducing subjectivity in classification of severity level of Port State Control (PSC) ship inspections using Generative AI (GenAI) and AutoML.
 
-Port State Control (PSC) inspections are critical for maritime safety and compliance, but the evaluation process is often subjective, leading to operational inefficiencies and potential safety risks. This project outlines a structured methodology to evaluate severity levels from PSC inspection findings using **Generative AI** augmented through **prompt engineering** and **chain-of-thought reasoning**. The approach provides a second opinion to severity scores, balancing human subjectivity. The **AutoGluon** AutoML framework was used for predictive modeling, ensuring consistent, less biased, and scalable severity evaluations.
+## Features
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **Ship condition classification** | Classifies the condition of the ship based on engineer's comment | ✅ Implemented |
+| **AI-Augmented Severity data** | Uses Generative AI with prompt engineering and chain-of-thought reasoning to provide a second opinion on PSC inspection severity scores. | ✅ Implemented |
 
-## Methodology
 
-### 1. Data Preparation
-- **Raw Data**: The dataset `psc_severity_train` was preprocessed by removing irrelevant columns (`annotation_id`, `username`, `InspectionDate`).
-- **Feature Extraction**: Key features such as `PscInspectionId`, `Deficiency/Finding`, `Description Overview`, `Immediate Causes`, `Root Cause Analysis`, `Corrective Action`, `Preventive Action`, and `Deficiency Code` were extracted.
-- **Encoding**: The `annotated_severity` column was encoded to numerical values: 0 (LOW), 1 (MED), and 2 (HIGH).
+## Technical Implementations
+- **Data Preparation and Feature Extraction** - [View Code](link)
+ - Preprocesses the raw data by removing irrelevant columns and extracts key features such as PscInspectionId, Deficiency/Finding, and others for model training.
 
-### 2. Augmenting Data with AI Evaluation
-- **AI Model**: A **Large Language Model (LLM)** based on Google’s **FLAN-T5** was used to generate unbiased severity scores.
-- **Prompt Engineering**: Zero-shot **chain-of-thought reasoning** was implemented to reduce AI hallucination and ensure rational outputs.
-- **Synthetic Data**: The AI-generated severity scores added **4,364 synthetic samples** to the dataset, improving its diversity and representativeness.
+- **AI-Driven Severity Score Generation** - [View Code](link)
+ - implements a Large Language Model (LLM) based on Google’s FLAN-T5 to generate unbiased severity scores using zero-shot chain-of-thought reasoning.
 
-### 3. Model Training
-- **AutoGluon**: The feature-engineered data was fed into **AutoGluon**, an AutoML framework, which automated feature engineering, model selection, and hyperparameter tuning.
-- **Best Model**: The **CatBoost** model achieved the best performance with a **roc_auc_ovo score of 0.768** and an **accuracy of 0.640**.
+- **Classification Mode Training and Prediction** - [View Code](link)
+ - Utilizes AutoGluon AutoML framework to train and optimize the best model (CatBoost) for predicting severity scores on the test set.
 
-### 4. Test Set Prediction
-- The best trained **CatBoost** model was used to predict severity scores on the test set.
 
-## Rules and Assumptions
-- **Mean Aggregation**: Severity levels were aggregated using the mean of **Subject Matter Expert (SME)** and AI-provided scores.
-- **Synthetic Data Assumptions**: AI-generated severity scores were assumed to be equivalent to those provided by SMEs.
-- **Inspector Expertise**: Inspectors were assumed to adhere to standard industry practices and guidelines.
 
-## Results and Discussion
-- **Model Performance**: The integration of generative AI and AutoGluon resulted in a robust model with an **overall roc_auc score of 0.768**.
-- **Data Augmentation**: The addition of **4,364 synthetic samples** enhanced the model's reliability and demonstrated the importance of diverse data sources in vessel evaluations.
+## Running the Application
+Follow these steps to run the application:
 
-## Conclusion
-This project developed a **dependable framework** for evaluating consensus severity in PSC inspections by leveraging **generative AI** for unbiased data synthesis and **AutoGluon** for automated machine learning. The approach has significant potential to improve objectivity and consistency in vessel surveys, supporting the maritime industry's operational and commercial objectives.
+1. **Data Preparation**
+    - Preprocess the psc_severity_train dataset by removing irrelevant columns. Extract features like PscInspectionId, Deficiency/Finding, etc. Encode the annotated_severity column to numerical values (0, 1, 2).
+
+2. **AI Evaluation and Augmentation**
+    - Use the FLAN-T5 based LLM to generate severity scores. Implement prompt engineering and chain-of-thought reasoning. Add the synthetic data to the existing dataset.
+
+3. **AI Evaluation and Augmentation**
+    - Feed the feature-engineered data into AutoGluon. Train the CatBoost model, and use it to predict severity level on the test set.
 
 ## Contributors
-- **Curteis Yang**
-- **Dong Luanjie**
-- **Ho Min Han**
 
+<a href="https://github.com/Luanjie-Dong/NUS-RightShip-2025-Hackathon/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Luanjie-Dong/NUS-RightShip-2025-Hackathon" />
+</a>
