@@ -34,11 +34,10 @@ Follow these steps to run the application:
 
 3. **AI Evaluation and Augmentation**
     - Feed the feature-engineered data into AutoGluon. Train the CatBoost model, and use it to predict severity level on the test set.
-
+      
 ## Contributors
-
-<a href="https://github.com/Luanjie-Dong/NUS-RightShip-2025-Hackathon/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Luanjie-Dong/NUS-RightShip-2025-Hackathon" />
-</a>
+- **Curteis Yang**
+- **Dong Luanjie**
+- **Ho Min Han**
 
 
