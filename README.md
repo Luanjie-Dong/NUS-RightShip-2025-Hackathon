@@ -18,7 +18,7 @@ This repository contains the methodology and implementation details for the Mari
 - **AI-Driven Severity Score Generation** - [View Code](https://github.com/Luanjie-Dong/NUS-RightShip-2025-Hackathon/blob/main/MaritimeHackathon2025_Script%3ANotebook.ipynb)
   - implements a Large Language Model (LLM) based on Google’s FLAN-T5 to generate unbiased severity scores using zero-shot chain-of-thought reasoning.
 
-- **Classification Mode Training and Prediction** - [View Code](https://github.com/Luanjie-Dong/NUS-RightShip-2025-Hackathon/blob/main/MaritimeHackathon2025_Script%3ANotebook.ipynb)
+- **Classification Model Training and Prediction** - [View Code](https://github.com/Luanjie-Dong/NUS-RightShip-2025-Hackathon/blob/main/MaritimeHackathon2025_Script%3ANotebook.ipynb)
   - Utilizes AutoGluon AutoML framework to train and optimize the best model (CatBoost) for predicting severity scores on the test set.
 
 
